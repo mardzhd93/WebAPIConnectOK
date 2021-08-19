@@ -1,0 +1,47 @@
+IROXIT031\SQLEXPRESS
+
+ASP .Net Core Web API Proyecto
+-No Habilitar docker (Automatiza el despliegue de aplicaciones dentro de contenedores de software)
+- Agregar carpeta Models [se agrega clase dentro de la misma)
+
+- Agregar carpeta Context y se agrega clase AppDbContext
+- Instalar Microsoft.EntityFrameworkCore
+- Heredar : DbContext
+- Se agrega clase de dbSet a ocupar (Models)
+
+   public class AppDbContext: DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+        {
+
+        }
+        public DbSet<Permiso> Permiso{ get; set; }
+		
+- Agregar siguiente metodo en la misma clase para la conexion a SqlServer
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=IROXIT031\\SQLEXPRESS;Initial Catalog=ForTech;Integrated Security=True");
+            base.OnConfiguring(optionsBuilder);
+        }		
+    }
+
+_ Instalar
+	Comando de Instalación del paquete Microsoft.EntityFrameworkCore.SqlServer: 
+	Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 5.0.9
+	
+	
+	
+- Agregar carpeta Controllers [Se agrega Clase Controlador APi con Acciones Lectura y escritura)
+  
+- Agregar Linea services.AddDbContext<AppDbContext>(); en public void ConfigureServices(IServiceCollection services) de Startup.cs
+ 
+-Dentro del controlador se manda llamar al context 
+
+       private readonly AppDbContext context;
+
+        public TipoPermisoController(AppDbContext context)
+        {
+            this.context = context;
+        }
+-Para obtener resultados modificamos el metodo Get, Post, Patch, Put
