@@ -15,6 +15,7 @@ namespace WebAPIConnectOK.Context
         public DbSet<Permiso> Permiso { get; set; }
         public DbSet<TipoPermiso> TipoPermiso { get; set; }
 		
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=IROXIT031\\SQLEXPRESS;Initial Catalog=ForTech;Integrated Security=True");

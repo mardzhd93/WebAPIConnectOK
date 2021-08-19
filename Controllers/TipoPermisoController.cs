@@ -28,7 +28,9 @@ namespace WebAPIConnectOK.Controllers
         {
             try
             {
+           
                 return Ok(context.TipoPermiso.ToList());
+
             }
             catch (Exception Ex)
             {
