@@ -13,6 +13,7 @@ namespace WebAPIConnectOK.Context
         {
         }
         public DbSet<Permiso> Permiso { get; set; }
+        public DbSet<TipoPermiso> TipoPermiso { get; set; }
 		
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

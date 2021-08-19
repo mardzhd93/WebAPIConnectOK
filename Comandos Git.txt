@@ -6,7 +6,7 @@ git config --global user.name "mardzhdz93" token ghp_ZCvOiBUSVXNAWNCn2JVVQMkzVVd
 3 git add .
 git status
 
-4 git commit -m " WCFServiceEscritorioWeb "
+4 git commit -m "WebAPIConnect"
 --git add README.md 
 	[fatal: pathspec 'README.md' did not match any files]
 4.1 git branch -M main
@@ -14,7 +14,7 @@ git status
 actualizar
 git remote set-url origin https://github.com/mardzhd93/CRUDMVC.git
 crear nuevo
-5 git remote add origin https://github.com/mardzhd93/WCFServiceEscritorioWeb.git
+5 git remote add origin https://github.com/mardzhd93/WebAPIConnectOK.git
                         https://github.com/mardzhd93/CRUDMVC.git
 
 6 git push -u origin main
@@ -22,3 +22,10 @@ crear nuevo
 
 --remover git local
 rm -rf .git
+
+.... Subir cambios ....
+
+git pull origin...
+//Verifico que este actualizado, si no obviamente se bajan los cambios
+git commit -a -m "...."
+git push origin ....
